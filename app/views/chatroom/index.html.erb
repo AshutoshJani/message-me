@@ -1,1 +1,72 @@
-<h2 class="text-center">This is the ROOT route</h2>
+<h2 class="ui center aligned medium icon header">
+  <%# <i class="angle double right green icon"></i> %>
+  <i class="cloudscale loading teal icon"></i>
+  Welcome to the Chatroom
+</h2>
+
+<div class="ui two column grid"> <!--- Used to create 2 columns for the layout of chatbox and online users box --->
+  <div class="twelve wide column"> <!--- Semantic UI has a 16 column wide grid system this line states that the first column of the two column grid should be 12 wide --->
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui feed">
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                 <a>Elliot Fu</a> added <a>Jenny Hess</a> as a friend
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                 <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                 <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
+              </div>
+            </div>
+          </div>
+          <div class="event">
+            <div class="content">
+              <div class="summary">
+                 <em>Christian Rocha</em>: Test message.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="extra content">
+        <form class="ui reply form">
+          <div class="field">
+            <div class="ui fluid icon input">
+              <input type="text" placeholder="Enter a message....">
+              <i class="bordered inverted teal edit icon"></i>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="four wide column"> <!--- The rest 4 columns of the grid system are here --->
+    <div class="ui fluid raised card chatbox">
+      <div class="content">
+        <div class="ui inverted vertical menu">
+          <a class="active item">
+            Home
+          </a>
+          <a class="item">
+            Messages
+          </a>
+          <a class="item">
+            Friends
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
