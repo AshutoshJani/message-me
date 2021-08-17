@@ -21,5 +21,11 @@
 //= require_tree .
 
 $(document).on('turbolinks:load', function() {
+    // Dropdown functionality
     $('.ui.dropdown').dropdown();
+
+    // Flah messages close functionality
+    $('.message .close').on('click', function() {
+        $(this).closest('.message').transition('fade');
+    });
 })
