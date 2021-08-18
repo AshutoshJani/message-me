@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     def create
         message = current_user.messages.build(message_params)
         if message.save
-            redirect_to root_path
+            ActionCable.server.broadcast "chatroom_channel", msg: message_render(message) # Calling the messages/message.html.erb partial for proper rendering of the message
         end
     end
 
@@ -12,6 +12,10 @@ class MessagesController < ApplicationController
 
     def message_params
         params.require(:message).permit(:body)
+    end
+
+    def message_render(message_to_be_rendered)
+        render(partial: 'message', locals: {message: message_to_be_rendered}) # This command renders the message partial and the locals sends a hash containing the data rquired by the partial
     end
 
 end

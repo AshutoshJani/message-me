@@ -20,6 +20,24 @@
 //
 //= require_tree .
 
+scroll_bottom = function() {
+    if($('#message-box').length > 0) {
+        $('#message-box').scrollTop($('#message-box')[0].scrollHeight);
+    }
+}
+
+submit_message = function() {
+    $('#message_body').on('keydown', function(e) {
+        if(e.keyCode == 13) {
+            $('button').click();
+            e.target.value = "";
+        };
+    });
+    $(".input").on("click", function(e) {
+        e.target.value = ""
+    });
+}
+
 $(document).on('turbolinks:load', function() {
     // Dropdown functionality
     $('.ui.dropdown').dropdown();
@@ -28,4 +46,8 @@ $(document).on('turbolinks:load', function() {
     $('.message .close').on('click', function() {
         $(this).closest('.message').transition('fade');
     });
+
+    submit_message(); // Function called to delete the value of in the input field 
+
+    scroll_bottom(); // Function called to scroll to the bottom of the messages conatiner everytime the page loadss
 })
